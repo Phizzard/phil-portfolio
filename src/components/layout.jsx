@@ -8,8 +8,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
+import styled from "@emotion/styled"
+import tw from "../../tailwind"
+import Navbar from "./Navbar"
 import "./layout.css"
 
 const Layout = ({ children }) => (
@@ -25,7 +26,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Navbar />
         <div
           style={{
             margin: `0 auto`,
@@ -34,7 +35,7 @@ const Layout = ({ children }) => (
             paddingTop: 0,
           }}
         >
-          <main>{children}</main>
+          <Main>{children}</Main>
           <footer>
             © {new Date().getFullYear()}, Built with
             {` `}
@@ -45,6 +46,10 @@ const Layout = ({ children }) => (
     )}
   />
 )
+
+const Main = styled.main`
+  ${tw`text-center`}
+`
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
