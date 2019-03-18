@@ -48,7 +48,7 @@ const Layout = ({ children }) => (
 )
 
 const Main = styled.main`
-  ${tw`text-center`}
+  ${tw`text-center pb-5`}
 `
 
 Layout.propTypes = {

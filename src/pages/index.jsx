@@ -6,6 +6,7 @@ import Layout from "../components/Layout"
 import Image from "../components/Image"
 import SEO from "../components/Seo"
 import Card from "../components/Card"
+import gatsbyIcon from "../images/gatsby-icon.png"
 
 const IndexPage = () => (
   <Layout>
@@ -22,9 +23,13 @@ const IndexPage = () => (
       Phil, thats me! This is my little corner on the internet where i show off
       things that I do.
     </IntroText>
-    <Card>
-      <h3>Whats in the Spotlight?</h3>
-    </Card>
+    <SpotLightCard title="What's hot?" image={gatsbyIcon}>
+      <h3>React Hooks</h3>
+      <p>Whats going on</p>
+    </SpotLightCard>
+    <SpotLightCard title="What's new?" image={gatsbyIcon}>
+      <h3>Gatsby</h3>
+    </SpotLightCard>
   </Layout>
 )
 
@@ -45,6 +50,10 @@ const HighLights = styled.div`
 
 const HighLight = styled.span`
   ${tw`bg-teal text-white py-1 px-3 mx-2 font-sans font-bold rounded-full`}
+`
+
+const SpotLightCard = styled(Card)`
+  ${tw`mb-5`}
 `
 
 export default IndexPage
