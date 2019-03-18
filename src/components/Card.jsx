@@ -5,9 +5,11 @@ import tw from "../../tailwind"
 
 const Card = ({ title, children, className, image }) => (
   <Container className={className}>
-    <Header>
-      <Title>{title}</Title>
-    </Header>
+    {title && (
+      <Header>
+        <Title>{title}</Title>
+      </Header>
+    )}
     <Body>
       {image && <Image src={image} />}
       <Content>{children}</Content>
