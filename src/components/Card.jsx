@@ -11,7 +11,11 @@ const Card = ({ title, children, className, image }) => (
       </Header>
     )}
     <Body>
-      {image && <Image src={image} />}
+      {image && (
+        <ImageWrapper>
+          <Image src={image} />
+        </ImageWrapper>
+      )}
       <Content>{children}</Content>
     </Body>
   </Container>
@@ -30,17 +34,23 @@ const Header = styled.div`
 `
 
 const Body = styled.div`
-  ${tw`p-4 flex relative`}
+  ${tw`p-4 flex relative flex-wrap`}
 `
 const Title = styled.h3`
   ${tw`m-0 p-2 rounded-tl-lg rounded-bl-lg `}
 `
-
+const ImageWrapper = styled.div`
+  ${tw`m-0 p-1 flex-shrink`}
+  flex-basis:40%;
+  @media screen and (max-width: 576px) {
+    flex-basis: 100%;
+  }
+`
 const Image = styled.img`
-  ${tw`w-24 h-full m-0 p-1`}
+  ${tw`w-full h-full m-0`}
 `
 const Content = styled.div`
-  ${tw`p-1 w-full text-left`}
+  ${tw`p-1 w-full text-left flex-1`}
 `
 
 Card.propTypes = {

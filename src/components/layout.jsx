@@ -11,6 +11,8 @@ import { StaticQuery, graphql } from "gatsby"
 import styled from "@emotion/styled"
 import tw from "../../tailwind"
 import Navbar from "./Navbar"
+
+import Intro from "../components/Intro"
 import "./layout.css"
 
 const Layout = ({ children }) => (
@@ -27,25 +29,22 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Navbar />
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0,
-          }}
-        >
+        <Intro />
+        <MainWrapper>
           <Main>{children}</Main>
           <footer>
             © {new Date().getFullYear()}, Built with
             {` `}
             <a href="https://www.gatsbyjs.org">Gatsby</a>
           </footer>
-        </div>
+        </MainWrapper>
       </>
     )}
   />
 )
+const MainWrapper = styled.div`
+  ${tw`mx-auto my-0 sm:px-4 pt-0 pb-8`}
+`
 
 const Main = styled.main`
   ${tw`text-center pb-5`}
