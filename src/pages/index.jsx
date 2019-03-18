@@ -24,11 +24,22 @@ const IndexPage = () => (
       things that I do.
     </IntroText>
     <SpotLightCard title="What's hot?" image={gatsbyIcon}>
-      <h3>React Hooks</h3>
-      <p>Whats going on</p>
+      <SpotLightCardTitle>React Hooks</SpotLightCardTitle>
+      <SpotLightCardText>
+        React being my favourite thing to write applications in at this point,
+        and hooks is a new API released that changes how react is written and
+        offers cool stuff and even simplifies some patterns
+      </SpotLightCardText>
     </SpotLightCard>
     <SpotLightCard title="What's new?" image={gatsbyIcon}>
-      <h3>Gatsby</h3>
+      <SpotLightCardTitle>Gatsby</SpotLightCardTitle>
+      <SpotLightCardText>
+        Gatsby is a serverless framework for building static sites. It can use
+        data from almost any API or locally to build it's own data store in
+        graphQL, and render it's views and components in React, all in a nice
+        package thats rated 99 on PWA out the box. It's actually what this
+        portfolio is built in! :)
+      </SpotLightCardText>
     </SpotLightCard>
   </Layout>
 )
@@ -54,6 +65,14 @@ const HighLight = styled.span`
 
 const SpotLightCard = styled(Card)`
   ${tw`mb-5`}
+`
+
+const SpotLightCardTitle = styled.h3`
+  ${tw`mb-2`}
+`
+
+const SpotLightCardText = styled.p`
+  ${tw`mb-2 font-sans font-light`}
 `
 
 export default IndexPage
