@@ -44,6 +44,7 @@ const Layout = ({ children }) => (
 )
 const MainWrapper = styled.div`
   ${tw`mx-auto my-0 sm:px-4 pt-0 pb-8`}
+  max-width: 1060px;
 `
 
 const Main = styled.main`

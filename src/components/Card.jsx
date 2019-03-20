@@ -3,7 +3,7 @@ import { any } from "prop-types"
 import styled from "@emotion/styled"
 import tw from "../../tailwind"
 
-const Card = ({ title, children, className, image }) => (
+const Card = ({ title, children, className, image, imageTop }) => (
   <Container className={className}>
     {title && (
       <Header>
@@ -12,7 +12,7 @@ const Card = ({ title, children, className, image }) => (
     )}
     <Body>
       {image && (
-        <ImageWrapper>
+        <ImageWrapper imageTop={imageTop}>
           <Image src={image} />
         </ImageWrapper>
       )}
@@ -40,19 +40,26 @@ const Title = styled.h3`
   ${tw`m-0 p-2 rounded-tl-lg rounded-bl-lg `}
 `
 const ImageWrapper = styled.div`
-  ${tw`m-0 p-1 flex-shrink`}
-  flex-basis:40%;
-  @media screen and (max-width: 576px) {
-    flex-basis: 100%;
+  ${tw`m-0 p-1 flex-shrink text-center`}
+  flex-basis: 100%;
+  @media screen and (min-width: 576px) {
+    ${tw`text-left`}
+    flex-basis: ${props => (props.imageTop ? "100%" : "30%")}
+  }
+  @media screen and (min-width: 768px) {
+    ${tw`text-left`}
+    flex-basis: ${props => (props.imageTop ? "100%" : "20%")}
   }
 `
 const Image = styled.img`
-  ${tw`w-full h-full m-0`}
+  ${tw`max-w-xs max-h-xs m-0 w-full h-full`}
 `
 const Content = styled.div`
-  ${tw`p-1 w-full text-left flex-1`}
+  ${tw`p-2 w-full text-left flex-1`}
 `
-
+Card.defaultProps = {
+  imageTop: false,
+}
 Card.propTypes = {
   children: any,
 }

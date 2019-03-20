@@ -26,7 +26,7 @@ const Container = styled.div`
   ${tw`lg:shadow-md lg:overflow-hidden lg:rounded-lg`}
   display: flex;
   flex-wrap: wrap;
-  max-width: 920px;
+  max-width: 1040px;
   margin: 0 auto;
 `
 
