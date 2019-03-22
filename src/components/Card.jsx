@@ -52,7 +52,7 @@ const ImageWrapper = styled.div`
   }
 `
 const Image = styled.img`
-  ${tw`max-w-xs max-h-xs m-0 w-full h-full`}
+  ${tw`max-w-xs max-h-xs m-0 w-full`}
 `
 const Content = styled.div`
   ${tw`p-2 w-full text-left flex-1`}

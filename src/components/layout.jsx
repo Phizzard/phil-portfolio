@@ -28,7 +28,6 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Navbar />
         <Intro />
         <MainWrapper>
           <Main>{children}</Main>

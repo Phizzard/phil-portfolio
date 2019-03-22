@@ -1,7 +1,8 @@
-import React, { Fragment } from "react"
+import React from "react"
 import styled from "@emotion/styled"
 import tw from "../../tailwind"
 import Image from "../components/Image"
+import Navbar from "../components/Navbar"
 
 const Intro = () => (
   <Container>
@@ -16,6 +17,7 @@ const Intro = () => (
         <HighLight>Node</HighLight>
         <HighLight>JS</HighLight>
       </HighLights>
+      <Navbar />
     </TextWrapper>
   </Container>
 )
@@ -38,7 +40,7 @@ const ImageWrapper = styled.div`
 `
 
 const TextWrapper = styled.div`
-  ${tw`lg:flex lg:flex-col lg:justify-center lg:flex-grow`}
+  ${tw`relative md:flex md:flex-col md:justify-center md:flex-grow`}
   flex-basis: 100%;
   @media screen and (min-width: 768px) {
     flex-basis: 60%;

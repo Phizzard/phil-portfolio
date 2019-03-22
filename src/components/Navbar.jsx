@@ -37,7 +37,7 @@ const Navbar = () => (
 )
 
 const Container = styled.nav`
-  ${tw`fixed pin-b w-screen flex items-center justify-around bg-teal z-50`}
+  ${tw`md:absolute md:w-full fixed pin-b w-screen flex items-center justify-around bg-teal z-50`}
 `
 const Item = styled(Link)`
   ${tw`flex flex-col content-center align-center items-center justify-center p-1 text-white no-underline`}

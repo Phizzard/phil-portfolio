@@ -6,6 +6,9 @@ import tw from "../../tailwind"
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 import Card from "../components/Card"
+import CardTitle from "../components/CardTitle"
+import CardSubTitle from "../components/CardSubTitle"
+import CardText from "../components/CardText"
 import IntroText from "../components/IntroText"
 import lmg from "../images/lxmg.png"
 import ffn from "../images/44n.png"
@@ -13,6 +16,8 @@ import omsg from "../images/omsg.png"
 import reactIcon from "../images/react.png"
 import nodeIcon from "../images/node.png"
 import javascriptIcon from "../images/javascript.png"
+import cssIcon from "../images/css-logo2.png"
+import htmlIcon from "../images/html-logo.png"
 
 const Resume = () => (
   <Layout>
@@ -23,9 +28,9 @@ const Resume = () => (
     </IntroText>
     <SubTitle>Employment</SubTitle>
     <WorkCard title="Oct 2016 - Present" image={lmg} imageTop>
-      <WorkCardTitle>LabX Media Group</WorkCardTitle>
-      <WorkCardSubTitle>Full Stack Web Developer</WorkCardSubTitle>
-      <WorkCardText>
+      <CardTitle>LabX Media Group</CardTitle>
+      <CardSubTitle>Full Stack Web Developer</CardSubTitle>
+      <CardText>
         LabX Media Group (LMG) is a worldwide information and marketing company
         focused within the science community, with various brands underneath
         ranging from E-commerce, social platforms, and editorial systems. Mainly
@@ -43,24 +48,24 @@ const Resume = () => (
         Magento's lacking frontend I was able to create a proof of concept
         outside of work hours and present the alternate route to progress on the
         project and provide a cleaner storefront experience.
-      </WorkCardText>
+      </CardText>
     </WorkCard>
     <WorkCard title="Jan 2015 - Oct 2016" image={ffn} imageTop>
-      <WorkCardTitle>Fourty Four North</WorkCardTitle>
-      <WorkCardSubTitle>Jubior Web Developer</WorkCardSubTitle>
-      <WorkCardText>
+      <CardTitle>Fourty Four North</CardTitle>
+      <CardSubTitle>Jubior Web Developer</CardSubTitle>
+      <CardText>
         Working as a Junior Web Developer at 44 North Digital Marketing my
         responsibilities include creating responsive, appealing, lead generating
         websites for our clients. Using in depth knowledge and understanding of
         WordPress's architecture with themes and plugins to fit custom needs for
         clients and integrating websites with applications such as Active
         Campaign and Zapier to create auto responding email services.
-      </WorkCardText>
+      </CardText>
     </WorkCard>
     <WorkCard title="May 2015 - Sept 2015" image={omsg} imageTop>
-      <WorkCardTitle>One More Story Games</WorkCardTitle>
-      <WorkCardSubTitle>Junior Client Developer</WorkCardSubTitle>
-      <WorkCardText>
+      <CardTitle>One More Story Games</CardTitle>
+      <CardSubTitle>Junior Client Developer</CardSubTitle>
+      <CardText>
         Working as a junior client programmer in my first non paid work term, I
         got the chance to work with some familiar technology and some
         unfamiliar. Utilizing a MYSQL database using PHP to talk to a flash
@@ -68,7 +73,7 @@ const Resume = () => (
         use of action script that is used for flash. Using existing knowledge of
         similar object orientated programming such as Java to learn quickly to
         perform tasks.
-      </WorkCardText>
+      </CardText>
     </WorkCard>
     <SubTitle>Skills</SubTitle>
     <SkillCards>
@@ -84,26 +89,24 @@ const Resume = () => (
         <SkillImage src={javascriptIcon} />
         <SubTitle>Javascript</SubTitle>
       </SkillCard>
+      <SkillCard>
+        <SkillImage src={cssIcon} />
+        <SubTitle>CSS</SubTitle>
+      </SkillCard>
+      <SkillCard>
+        <SkillImage src={htmlIcon} />
+        <SubTitle>HTML</SubTitle>
+      </SkillCard>
     </SkillCards>
   </Layout>
 )
 const WorkCard = styled(Card)`
   ${tw` font-sans mb-4`}
 `
-
-const WorkCardTitle = styled.h3`
-  ${tw`mb-0 text-center sm:text-left `}
-`
-
-const WorkCardText = styled.p`
-  ${tw`mb-2 text-center sm:text-left `}
-`
 const SubTitle = styled.h2`
   ${tw`text-center text-grey-dark font-light my-2 text-3xl`}
 `
-const WorkCardSubTitle = styled(SubTitle)`
-  ${tw`sm:text-left text-2xl`}
-`
+
 const SkillCards = styled.div`
   ${tw`flex flex-wrap`}
   @media screen and (min-width: 576px) {
@@ -118,6 +121,6 @@ const SkillCard = styled(Card)`
   }
 `
 const SkillImage = styled.img`
-  ${tw`px-12 mb-0`}
+  ${tw`px-12 mb-0 w-full`}
 `
 export default Resume
