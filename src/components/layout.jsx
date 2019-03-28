@@ -10,9 +10,8 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import styled from "@emotion/styled"
 import tw from "../../tailwind"
-import Navbar from "./Navbar"
 
-import Intro from "../components/Intro"
+import Intro from "./Intro"
 import "./layout.css"
 
 const Layout = ({ children }) => (

@@ -2,7 +2,7 @@ import React from "react"
 import tw from "../../tailwind"
 import styled from "@emotion/styled"
 
-import Layout from "../components/Layout"
+import Layout from "../components/layout"
 import SEO from "../components/Seo"
 import IntroText from "../components/IntroText"
 import Card from "../components/Card"
