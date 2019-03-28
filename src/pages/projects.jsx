@@ -11,6 +11,7 @@ import Button from "../components/Button"
 
 import gatsbyIcon from "../images/gatsby-icon.png"
 import giantBombIcon from "../images/giantbomb.jpg"
+import thunderCatsIcon from "../images/ThunderCats-logo.png"
 
 const Projects = () => (
   <Layout>
@@ -32,10 +33,18 @@ const Projects = () => (
         structure and their API.
       </CardText>
       <ButtonGroup>
-        <ProjectButton as="a" href="https://github.com/Phizzard/gatsby-bomb">
+        <ProjectButton
+          as="a"
+          href="https://github.com/Phizzard/gatsby-bomb"
+          target="_blank"
+        >
           View Code
         </ProjectButton>
-        <ProjectButton as="a" href="https://gatsbybomb.netlify.com/">
+        <ProjectButton
+          as="a"
+          href="https://gatsbybomb.netlify.com/"
+          target="_blank"
+        >
           View Project
         </ProjectButton>
       </ButtonGroup>
@@ -48,10 +57,18 @@ const Projects = () => (
         decided to play with their API.
       </CardText>
       <ButtonGroup>
-        <ProjectButton as="a" href="https://github.com/Phizzard/smaller-bomb">
+        <ProjectButton
+          as="a"
+          href="https://github.com/Phizzard/smaller-bomb"
+          target="_blank"
+        >
           View Code
         </ProjectButton>
-        <ProjectButton as="a" href="https://smaller-bomb.herokuapp.com/">
+        <ProjectButton
+          as="a"
+          href="https://smaller-bomb.herokuapp.com/"
+          target="_blank"
+        >
           View Project
         </ProjectButton>
       </ButtonGroup>
@@ -64,8 +81,33 @@ const Projects = () => (
         right implementation of a CMS. I then finally found a good compromise!
       </CardText>
       <ButtonGroup>
-        <ProjectButton as="a" href="">
+        <ProjectButton
+          as="a"
+          href="https://github.com/Phizzard/phil-portfolio"
+          target="_blank"
+        >
           View Code
+        </ProjectButton>
+      </ButtonGroup>
+    </ProjectCard>
+    <ProjectCard image={thunderCatsIcon} title="ThunderCats Full Page Theme">
+      <CardText>
+        This is admitedly, pretty dumb. When i first found out about netlify's
+        manual drag n drop deploys, I made a bunch of dumb web pages to send to
+        people for giggles. This is one of them.
+      </CardText>
+      <CardText>
+        WARNING: This is an autoplaying fullscreen video with audio, it also
+        doesn't work on mobile :(. There's also a change that the internet hates
+        my fun and this might not work at all!
+      </CardText>
+      <ButtonGroup>
+        <ProjectButton
+          as="a"
+          href="https://thundercats.netlify.com/"
+          target="_blank"
+        >
+          View Project
         </ProjectButton>
       </ButtonGroup>
     </ProjectCard>
