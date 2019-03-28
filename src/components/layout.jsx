@@ -31,11 +31,11 @@ const Layout = ({ children }) => (
         <Intro />
         <MainWrapper>
           <Main>{children}</Main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
+          <Footer>
+            © {new Date().getFullYear()} Philip Tietjen, Built with
             {` `}
             <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
+          </Footer>
         </MainWrapper>
       </>
     )}
@@ -48,6 +48,10 @@ const MainWrapper = styled.div`
 
 const Main = styled.main`
   ${tw`text-center pb-5`}
+`
+
+const Footer = styled.footer`
+  ${tw`font-sans`}
 `
 
 Layout.propTypes = {

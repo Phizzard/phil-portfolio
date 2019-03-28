@@ -27,6 +27,7 @@ const Connect = () => (
       <SocialCard>
         <Image src={devIcon} />
         <SubTitle>Dev.to</SubTitle>
+        <SmallText>* Articles yet to be published :(</SmallText>
       </SocialCard>
       <SocialCard>
         <Image src={twitterIcon} />
@@ -51,6 +52,9 @@ const SocialCard = styled(Card)`
 `
 const SubTitle = styled.h2`
   ${tw`text-center text-grey-dark font-light my-2 text-3xl`}
+`
+const SmallText = styled.p`
+  ${tw`text-center text-grey-dark font-light my-2 text-xs font-sans`}
 `
 
 const Image = styled.img`
