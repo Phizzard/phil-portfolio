@@ -3,7 +3,7 @@ import styled from "@emotion/styled"
 import tw from "../../tailwind"
 
 import Layout from "../components/layout"
-import SEO from "../components/Seo"
+import SEO from "../components/seo"
 import Card from "../components/Card"
 import CardTitle from "../components/CardTitle"
 import CardSubTitle from "../components/CardSubTitle"
