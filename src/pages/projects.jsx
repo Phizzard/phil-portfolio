@@ -21,13 +21,15 @@ const Projects = () => (
     </IntroText>
     <ProjectCard image={giantBombIcon} title="Regular Bomb Shows">
       <CardText>
-        Regular Bomb Shows is a PWA powered by GatsbyJS. It's a serverless
-        netflix-like app using the Giant Bomb API as a source of data. This
-        Gatsby App uses React, Emotion Styled, and GraphQL. The Giantbomb
-        website underwent a redesign, implementing a Show / Season / Episode
-        like structure to their content. As a fan of the site and as a
-        developer, I really liked their redesign and was inspired to see what I
-        could make with this new video structure and their API.
+        That's right, I have 2 different projects using Giantbomb's API. I'm a
+        fan of the site, and wanted to expand on my mirco app. Regular Bomb
+        Shows is a PWA powered by GatsbyJS. It's a serverless netflix-like app
+        using the Giant Bomb API as a source of data. This Gatsby App uses
+        React, Emotion Styled, and GraphQL. The Giantbomb website underwent a
+        redesign, implementing a Show / Season / Episode like structure to their
+        content. As a fan of the site and as a developer, I really liked their
+        redesign and was inspired to see what I could make with this new video
+        structure and their API.
       </CardText>
       <ButtonGroup>
         <ProjectButton as="a" href="https://github.com/Phizzard/gatsby-bomb">

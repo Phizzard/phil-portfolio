@@ -3,7 +3,14 @@ import { any } from "prop-types"
 import styled from "@emotion/styled"
 import tw from "../../tailwind"
 
-const Card = ({ title, children, className, image, imageTop }) => (
+const Card = ({
+  title,
+  children,
+  className,
+  image,
+  imageTop,
+  contentCenter,
+}) => (
   <Container className={className}>
     {title && (
       <Header>
@@ -16,7 +23,7 @@ const Card = ({ title, children, className, image, imageTop }) => (
           <Image src={image} />
         </ImageWrapper>
       )}
-      <Content>{children}</Content>
+      <Content contentCenter={contentCenter}>{children}</Content>
     </Body>
   </Container>
 )
@@ -55,7 +62,8 @@ const Image = styled.img`
   ${tw`max-w-xs max-h-xs m-0 w-full`}
 `
 const Content = styled.div`
-  ${tw`p-2 w-full text-left flex-1`}
+  ${tw`p-2 w-full flex-1 ${props =>
+    props.contentCenter ? "text-center" : "text-left"}`}
 `
 Card.defaultProps = {
   imageTop: false,
