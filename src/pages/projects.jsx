@@ -20,7 +20,7 @@ const Projects = () => (
       Sometimes I either finish or come close to finishing a side project. Here
       are some I don't classify to be in my github graveyard.
     </IntroText>
-    <ProjectCard image={giantBombIcon} title="Regular Bomb Shows">
+    <ProjectCard image={giantBombIcon} title="Regular Bomb Shows (WIP)">
       <CardText>
         That's right, I have 2 different projects using Giantbomb's API. I'm a
         fan of the site, and wanted to expand on my mirco app. Regular Bomb

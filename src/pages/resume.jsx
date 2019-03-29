@@ -14,9 +14,12 @@ import ffn from "../images/44n.png"
 import omsg from "../images/omsg.png"
 import reactIcon from "../images/react.png"
 import nodeIcon from "../images/node.png"
+import jestIcon from "../images/jest.png"
 import javascriptIcon from "../images/javascript.png"
+import gatsbyIcon from "../images/gatsby-icon.png"
 import cssIcon from "../images/css-logo2.png"
 import htmlIcon from "../images/html-logo.png"
+import georgianIcon from "../images/georgian.svg"
 
 const Resume = () => (
   <Layout>
@@ -74,6 +77,11 @@ const Resume = () => (
         perform tasks.
       </CardText>
     </WorkCard>
+    <SubTitle>Education</SubTitle>
+    <WorkCard title="Sept 2014 - Aug 2016" image={georgianIcon}>
+      <CardTitle>Computer Programmer - 2 years</CardTitle>
+      <CardSubTitle>Diploma</CardSubTitle>
+    </WorkCard>
     <SubTitle>Skills</SubTitle>
     <SkillCards>
       <SkillCard>
@@ -87,6 +95,14 @@ const Resume = () => (
       <SkillCard>
         <SkillImage src={javascriptIcon} />
         <SubTitle>Javascript</SubTitle>
+      </SkillCard>
+      <SkillCard>
+        <SkillImage src={gatsbyIcon} />
+        <SubTitle>Gatsby</SubTitle>
+      </SkillCard>
+      <SkillCard>
+        <SkillImage src={jestIcon} />
+        <SubTitle>Jest</SubTitle>
       </SkillCard>
       <SkillCard>
         <SkillImage src={cssIcon} />
