@@ -3,11 +3,9 @@ import styled from "@emotion/styled"
 import tw from "../../tailwind"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Card from "../components/Card"
-import IntroText from "../components/IntroText"
+import {Card} from "../components/Card"
+import {IntroText} from "../components/Intro"
 import gatsbyIcon from "../images/gatsby-icon.png"
-import reactIcon from "../images/react.png"
-import reactJestIcon from "../images/react-jest.png"
 import reduxIcon from "../images/redux.png"
 
 const IndexPage = () => (
@@ -17,16 +15,8 @@ const IndexPage = () => (
       Phil, thats me! This is my little corner on the internet where i show off
       things that I do.
     </IntroText>
-    <SpotLightCard title="What's hot?" image={reactIcon}>
-      <SpotLightCardTitle>React Hooks</SpotLightCardTitle>
-      <SpotLightCardText>
-        React being my favourite thing to write applications in at this point,
-        and hooks is a new API released that changes how react is written and
-        offers cool stuff and even simplifies some patterns
-      </SpotLightCardText>
-    </SpotLightCard>
-    <SpotLightCard title="What's new?" image={gatsbyIcon}>
-      <SpotLightCardTitle>Gatsby</SpotLightCardTitle>
+    <SpotLightCard title="What's next?" image={gatsbyIcon}>
+      <SpotLightCardTitle>Gatsby Themes</SpotLightCardTitle>
       <SpotLightCardText>
         Gatsby is a serverless framework for building static sites. It can use
         data from almost any API or locally to build it's own data store in
@@ -34,26 +24,19 @@ const IndexPage = () => (
         package thats rated 99 on PWA out the box. It's actually what this
         portfolio is built in! :)
       </SpotLightCardText>
-    </SpotLightCard>
-    <SpotLightCard title="What's next?" image={reactJestIcon}>
-      <SpotLightCardTitle>React + Jest</SpotLightCardTitle>
       <SpotLightCardText>
-        I've used Jest for testing services and endpoints for API's, but i've
-        yet to close the end to end loop with React + Jest + Enzyme. It's
-        looking like it may be my next endeavour.
+        Gatsby Themes seems to be an evolution of their starters that allows some
+        composition with other themes and being able to update to date with later versions.
       </SpotLightCardText>
     </SpotLightCard>
-    <SpotLightCard title="What's next?" image={reduxIcon}>
-      <SpotLightCardTitle>Redux</SpotLightCardTitle>
+    <SpotLightCard title="What's coming up?" image={reduxIcon}>
+      <SpotLightCardTitle>Game Development</SpotLightCardTitle>
       <SpotLightCardText>
-        Redux is something I've not had much chance to dive into yet, learning
-        and making react apps over the few years I've preferred a more pure
-        react approach, especially when the updated context API was released,
-        and now more recently the use of hooks.
-      </SpotLightCardText>
-      <SpotLightCardText>
-        Soon I'm hoping to jump into the todo's of a react-redux app, and join
-        the redux club... once i find the time ya'know.
+        This one is a little harder to define exactly. I've always been passionate about video games.
+        I've been playing them since I can remember and still do if I can find the time, even when I'm
+        not playing them I'm trying to keep up to date with news, reviews, and playthroughs.
+        The Idea of making games as a hobby still excites me, so I would like to take a looksies whether it's in 
+        Phaser, Unity, or Unreal Engine.
       </SpotLightCardText>
     </SpotLightCard>
   </Layout>

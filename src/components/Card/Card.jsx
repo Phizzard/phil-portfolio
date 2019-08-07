@@ -1,7 +1,7 @@
 import React from "react"
 import { any } from "prop-types"
 import styled from "@emotion/styled"
-import tw from "../../tailwind"
+import tw from "../../../tailwind"
 
 const Card = ({
   title,

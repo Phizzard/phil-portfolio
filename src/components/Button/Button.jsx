@@ -1,10 +1,12 @@
 import React from "react"
-import tw from "../../tailwind"
+import tw from "../../../tailwind"
 import styled from "@emotion/styled"
 
-const Button = ({ children, ...attrs }) => (
-  <Container {...attrs}>{children}</Container>
-)
+const Button = ({ children, ...attrs }) => {
+  //const isAnchor = href ? true : false;
+
+  return <Container {...attrs}>{children}</Container>
+}
 
 export default Button
 

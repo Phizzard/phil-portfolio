@@ -4,9 +4,8 @@ import styled from "@emotion/styled"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import IntroText from "../components/IntroText"
-import Card from "../components/Card"
-import CardText from "../components/CardText"
+import {IntroText} from "../components/Intro"
+import {Card, CardText} from "../components/Card"
 import {
   GiGamepad,
   GiBeerStein,

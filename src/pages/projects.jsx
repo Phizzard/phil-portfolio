@@ -4,10 +4,9 @@ import tw from "../../tailwind"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import IntroText from "../components/IntroText"
-import Card from "../components/Card"
-import CardText from "../components/CardText"
-import Button from "../components/Button"
+import {IntroText} from "../components/Intro"
+import {Card, CardText} from "../components/Card"
+import {Button} from "../components/Button"
 
 import gatsbyIcon from "../images/gatsby-icon.png"
 import giantBombIcon from "../images/giantbomb.jpg"

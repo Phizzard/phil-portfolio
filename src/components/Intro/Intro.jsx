@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "@emotion/styled"
-import tw from "../../tailwind"
-import Image from "./image"
-import Navbar from "../components/Navbar"
+import tw from "../../../tailwind"
+import Image from "../image"
+import {Navbar} from "../Navbar"
 
 const Intro = () => (
   <Container>

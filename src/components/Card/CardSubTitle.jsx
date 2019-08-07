@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
-import tw from "../../tailwind"
+import tw from "../../../tailwind"
 
 const CardSubTitle = ({ children }) => <SubTitle>{children}</SubTitle>
 

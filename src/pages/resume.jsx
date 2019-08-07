@@ -4,11 +4,8 @@ import tw from "../../tailwind"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Card from "../components/Card"
-import CardTitle from "../components/CardTitle"
-import CardSubTitle from "../components/CardSubTitle"
-import CardText from "../components/CardText"
-import IntroText from "../components/IntroText"
+import {Card, CardTitle, CardSubTitle, CardText} from "../components/Card"
+import {IntroText} from "../components/Intro"
 import lmg from "../images/lxmg.png"
 import ffn from "../images/44n.png"
 import omsg from "../images/omsg.png"
@@ -20,6 +17,8 @@ import gatsbyIcon from "../images/gatsby-icon.png"
 import cssIcon from "../images/css-logo2.png"
 import htmlIcon from "../images/html-logo.png"
 import georgianIcon from "../images/georgian.svg"
+import reduxIcon from "../images/redux.png"
+import cbcIcon from "../images/cbc-logo.png"
 
 const Resume = () => (
   <Layout>
@@ -29,7 +28,12 @@ const Resume = () => (
       of expertise at.
     </IntroText>
     <SubTitle>Employment</SubTitle>
-    <WorkCard title="Oct 2016 - Present" image={lmg} imageTop>
+    <WorkCard title="Jun 2019 - Present" image={cbcIcon} imageTop >
+      <CardTitle>CBC</CardTitle>
+      <CardSubTitle>Senior Full Stack Web Developer</CardSubTitle>
+      <CardText></CardText>
+    </WorkCard>
+    <WorkCard title="Oct 2016 - Jun 2019" image={lmg} imageTop>
       <CardTitle>LabX Media Group</CardTitle>
       <CardSubTitle>Full Stack Web Developer</CardSubTitle>
       <CardText>
@@ -52,7 +56,7 @@ const Resume = () => (
         project and provide a cleaner storefront experience.
       </CardText>
     </WorkCard>
-    <WorkCard title="Jan 2015 - Oct 2016" image={ffn} imageTop>
+    <WorkCard title="Jan 2016 - Oct 2016" image={ffn} imageTop>
       <CardTitle>Fourty Four North</CardTitle>
       <CardSubTitle>Jubior Web Developer</CardSubTitle>
       <CardText>
@@ -89,16 +93,20 @@ const Resume = () => (
         <SubTitle>React</SubTitle>
       </SkillCard>
       <SkillCard>
+        <SkillImage src={reduxIcon} />
+        <SubTitle>Redux</SubTitle>
+      </SkillCard>
+      <SkillCard>
+        <SkillImage src={gatsbyIcon} />
+        <SubTitle>Gatsby</SubTitle>
+      </SkillCard>
+      <SkillCard>
         <SkillImage src={nodeIcon} />
         <SubTitle>Node</SubTitle>
       </SkillCard>
       <SkillCard>
         <SkillImage src={javascriptIcon} />
         <SubTitle>Javascript</SubTitle>
-      </SkillCard>
-      <SkillCard>
-        <SkillImage src={gatsbyIcon} />
-        <SubTitle>Gatsby</SubTitle>
       </SkillCard>
       <SkillCard>
         <SkillImage src={jestIcon} />

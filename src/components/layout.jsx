@@ -11,7 +11,7 @@ import { StaticQuery, graphql } from "gatsby"
 import styled from "@emotion/styled"
 import tw from "../../tailwind"
 
-import Intro from "./Intro"
+import {Intro} from "./Intro"
 import "./layout.css"
 
 const Layout = ({ children }) => (
