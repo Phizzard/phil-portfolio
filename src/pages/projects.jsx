@@ -4,22 +4,21 @@ import tw from "../../tailwind"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import {IntroText} from "../components/Intro"
-import {Card, CardText} from "../components/Card"
-import {Button} from "../components/Button"
+import { IntroText } from "../components/Intro"
+import { Card, CardText } from "../components/Card"
+import { Button } from "../components/Button"
 
-import gatsbyIcon from "../images/gatsby-icon.png"
-import giantBombIcon from "../images/giantbomb.jpg"
-import thunderCatsIcon from "../images/ThunderCats-logo.png"
-
-const Projects = () => (
+const Projects = ({ data }) => (
   <Layout>
     <SEO title="Projects" />
     <IntroText>
       Sometimes I either finish or come close to finishing a side project. Here
       are some I don't classify to be in my github graveyard.
     </IntroText>
-    <ProjectCard image={giantBombIcon} title="Regular Bomb Shows (WIP)">
+    <ProjectCard
+      image={{ fluid: data.giantBombIconImage.childImageSharp.fluid }}
+      title="Regular Bomb Shows (WIP)"
+    >
       <CardText>
         That's right, I have 2 different projects using Giantbomb's API. I'm a
         fan of the site, and wanted to expand on my mirco app. Regular Bomb
@@ -48,7 +47,10 @@ const Projects = () => (
         </ProjectButton>
       </ButtonGroup>
     </ProjectCard>
-    <ProjectCard image={giantBombIcon} title="Smaller Bomb">
+    <ProjectCard
+      image={{ fluid: data.giantBombIconImage.childImageSharp.fluid }}
+      title="Smaller Bomb"
+    >
       <CardText>
         Smaller Bomb is a single page application made with Node, React, and
         Flex box, using the Giant Bomb API to search for videos and render their
@@ -72,7 +74,10 @@ const Projects = () => (
         </ProjectButton>
       </ButtonGroup>
     </ProjectCard>
-    <ProjectCard image={gatsbyIcon} title="Phil Tietjen Portfolio">
+    <ProjectCard
+      image={{ fluid: data.gatsbyIconImage.childImageSharp.fluid }}
+      title="Phil Tietjen Portfolio"
+    >
       <CardText>
         Yes I'm using my own portfolio site that you're currently on as a
         project and you can't stop me. This was something I would start to make,
@@ -89,7 +94,10 @@ const Projects = () => (
         </ProjectButton>
       </ButtonGroup>
     </ProjectCard>
-    <ProjectCard image={thunderCatsIcon} title="ThunderCats Full Page Theme">
+    <ProjectCard
+      image={{ fluid: data.thunderCatsIconImage.childImageSharp.fluid }}
+      title="ThunderCats Full Page Theme"
+    >
       <CardText>
         This is admitedly, pretty dumb. When i first found out about netlify's
         manual drag n drop deploys, I made a bunch of dumb web pages to send to
@@ -124,9 +132,35 @@ const ButtonGroup = styled.div`
 `
 
 const ProjectButton = styled(Button)`
-  ${tw`m-2`}
-  :first-of-type {
+  ${tw`m-2`} :first-of-type {
     margin-left: 0;
   }
 `
+
+export const query = graphql`
+  query ProjectsIconsQuery {
+    gatsbyIconImage: file(relativePath: { eq: "gatsby-icon.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 360) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    thunderCatsIconImage: file(relativePath: { eq: "ThunderCats-logo.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 360) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    giantBombIconImage: file(relativePath: { eq: "giantbomb.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 360) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
+
 export default Projects

@@ -4,23 +4,11 @@ import tw from "../../tailwind"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import {Card, CardTitle, CardSubTitle, CardText} from "../components/Card"
-import {IntroText} from "../components/Intro"
-import lmg from "../images/lxmg.png"
-import ffn from "../images/44n.png"
-import omsg from "../images/omsg.png"
-import reactIcon from "../images/react.png"
-import nodeIcon from "../images/node.png"
-import jestIcon from "../images/jest.png"
-import javascriptIcon from "../images/javascript.png"
-import gatsbyIcon from "../images/gatsby-icon.png"
-import cssIcon from "../images/css-logo2.png"
-import htmlIcon from "../images/html-logo.png"
+import { Card, CardTitle, CardSubTitle, CardText } from "../components/Card"
+import { IntroText } from "../components/Intro"
 import georgianIcon from "../images/georgian.svg"
-import reduxIcon from "../images/redux.png"
-import cbcIcon from "../images/cbc-logo.png"
 
-const Resume = () => (
+const Resume = ({ data }) => (
   <Layout>
     <SEO title="Resume" />
     <IntroText>
@@ -28,12 +16,18 @@ const Resume = () => (
       of expertise at.
     </IntroText>
     <SubTitle>Employment</SubTitle>
-    <WorkCard title="Jun 2019 - Present" image={cbcIcon} imageTop >
+    <WorkCard
+      title="Jun 2019 - Present"
+      image={{ fluid: data.cbcIconImage.childImageSharp.fluid, top: true }}
+    >
       <CardTitle>CBC</CardTitle>
-      <CardSubTitle>Senior Full Stack Web Developer</CardSubTitle>
+      <CardSubTitle>Senior Developer</CardSubTitle>
       <CardText></CardText>
     </WorkCard>
-    <WorkCard title="Oct 2016 - Jun 2019" image={lmg} imageTop>
+    <WorkCard
+      title="Oct 2016 - Jun 2019"
+      image={{ fluid: data.lxmgIconImage.childImageSharp.fluid, top: true }}
+    >
       <CardTitle>LabX Media Group</CardTitle>
       <CardSubTitle>Full Stack Web Developer</CardSubTitle>
       <CardText>
@@ -56,7 +50,10 @@ const Resume = () => (
         project and provide a cleaner storefront experience.
       </CardText>
     </WorkCard>
-    <WorkCard title="Jan 2016 - Oct 2016" image={ffn} imageTop>
+    <WorkCard
+      title="Jan 2016 - Oct 2016"
+      image={{ fluid: data.ffnIconImage.childImageSharp.fluid, top: true }}
+    >
       <CardTitle>Fourty Four North</CardTitle>
       <CardSubTitle>Jubior Web Developer</CardSubTitle>
       <CardText>
@@ -68,7 +65,11 @@ const Resume = () => (
         Campaign and Zapier to create auto responding email services.
       </CardText>
     </WorkCard>
-    <WorkCard title="May 2015 - Sept 2015" image={omsg} imageTop>
+    <WorkCard
+      title="May 2015 - Sept 2015"
+      image={{ fluid: data.omsgIconImage.childImageSharp.fluid, top: true }}
+      imageTop
+    >
       <CardTitle>One More Story Games</CardTitle>
       <CardSubTitle>Junior Client Developer</CardSubTitle>
       <CardText>
@@ -82,42 +83,56 @@ const Resume = () => (
       </CardText>
     </WorkCard>
     <SubTitle>Education</SubTitle>
-    <WorkCard title="Sept 2014 - Aug 2016" image={georgianIcon}>
+    <WorkCard
+      title="Sept 2014 - Aug 2016"
+      image={{ src: georgianIcon, top: true }}
+    >
       <CardTitle>Computer Programmer - 2 years</CardTitle>
       <CardSubTitle>Diploma</CardSubTitle>
     </WorkCard>
     <SubTitle>Skills</SubTitle>
     <SkillCards>
-      <SkillCard>
-        <SkillImage src={reactIcon} />
+      <SkillCard
+        image={{ fluid: data.reactIconImage.childImageSharp.fluid, top: true }}
+      >
         <SubTitle>React</SubTitle>
       </SkillCard>
-      <SkillCard>
-        <SkillImage src={reduxIcon} />
+      <SkillCard
+        image={{ fluid: data.reduxIconImage.childImageSharp.fluid, top: true }}
+      >
         <SubTitle>Redux</SubTitle>
       </SkillCard>
-      <SkillCard>
-        <SkillImage src={gatsbyIcon} />
+      <SkillCard
+        image={{ fluid: data.gatsbyIconImage.childImageSharp.fluid, top: true }}
+      >
         <SubTitle>Gatsby</SubTitle>
       </SkillCard>
-      <SkillCard>
-        <SkillImage src={nodeIcon} />
+      <SkillCard
+        image={{ fluid: data.nodeIconImage.childImageSharp.fluid, top: true }}
+      >
         <SubTitle>Node</SubTitle>
       </SkillCard>
-      <SkillCard>
-        <SkillImage src={javascriptIcon} />
+      <SkillCard
+        image={{
+          fluid: data.javascriptIconImage.childImageSharp.fluid,
+          top: true,
+        }}
+      >
         <SubTitle>Javascript</SubTitle>
       </SkillCard>
-      <SkillCard>
-        <SkillImage src={jestIcon} />
+      <SkillCard
+        image={{ fluid: data.jestIconImage.childImageSharp.fluid, top: true }}
+      >
         <SubTitle>Jest</SubTitle>
       </SkillCard>
-      <SkillCard>
-        <SkillImage src={cssIcon} />
+      <SkillCard
+        image={{ fluid: data.cssIconImage.childImageSharp.fluid, top: true }}
+      >
         <SubTitle>CSS</SubTitle>
       </SkillCard>
-      <SkillCard>
-        <SkillImage src={htmlIcon} />
+      <SkillCard
+        image={{ fluid: data.htmlIconImage.childImageSharp.fluid, top: true }}
+      >
         <SubTitle>HTML</SubTitle>
       </SkillCard>
     </SkillCards>
@@ -138,12 +153,100 @@ const SkillCards = styled.div`
 `
 
 const SkillCard = styled(Card)`
-  ${tw` font-sans mb-6`}
+  ${tw` font-sans mb-6 flex-grow`}
+  flex-basis: 48%;
   @media screen and (min-width: 576px) {
-    flex-basis: 48%;
+    flex-basis: 33%;
   }
 `
-const SkillImage = styled.img`
-  ${tw`px-12 mb-0 w-full`}
+
+export const query = graphql`
+  query CbcIconQuery {
+    cbcIconImage: file(relativePath: { eq: "cbc-logo.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 360) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    lxmgIconImage: file(relativePath: { eq: "lxmg.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 360) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    ffnIconImage: file(relativePath: { eq: "44n.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 360) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    omsgIconImage: file(relativePath: { eq: "omsg.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 360) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    reactIconImage: file(relativePath: { eq: "react.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 360) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    reduxIconImage: file(relativePath: { eq: "redux.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 360) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    gatsbyIconImage: file(relativePath: { eq: "gatsby-icon.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 360) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    javascriptIconImage: file(relativePath: { eq: "javascript.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 360) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    jestIconImage: file(relativePath: { eq: "jest.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 360) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    cssIconImage: file(relativePath: { eq: "css-logo2.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 360) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    htmlIconImage: file(relativePath: { eq: "html-logo.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 360) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    nodeIconImage: file(relativePath: { eq: "node.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 360) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
 `
+
 export default Resume

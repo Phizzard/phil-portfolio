@@ -2,7 +2,7 @@ import React from "react"
 import styled from "@emotion/styled"
 import tw from "../../../tailwind"
 import Image from "../image"
-import {Navbar} from "../Navbar"
+import { Navbar } from "../Navbar"
 
 const Intro = () => (
   <Container>
@@ -14,6 +14,8 @@ const Intro = () => (
       <SubTitle>FullStack Web Developer</SubTitle>
       <HighLights>
         <HighLight>React</HighLight>
+        <HighLight>Redux</HighLight>
+        <HighLight>Gatsby</HighLight>
         <HighLight>Node</HighLight>
         <HighLight>JS</HighLight>
       </HighLights>
