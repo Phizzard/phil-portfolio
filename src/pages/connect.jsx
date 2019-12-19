@@ -14,7 +14,10 @@ const Connect = ({ data }) => (
     <IntroText>I'm on the internet elsewhere too!</IntroText>
     <Socials>
       <SocialCard
-        image={{ fluid: data.linkedInIconImage.childImageSharp.fluid }}
+        image={{
+          fluid: data.linkedInIconImage.childImageSharp.fluid,
+          top: true,
+        }}
       >
         <SubTitle>LinkedIn</SubTitle>
         <Button
@@ -24,20 +27,27 @@ const Connect = ({ data }) => (
           View Profile
         </Button>
       </SocialCard>
-      <SocialCard image={{ fluid: data.githubIconImage.childImageSharp.fluid }}>
+      <SocialCard
+        image={{ fluid: data.githubIconImage.childImageSharp.fluid, top: true }}
+      >
         <SubTitle>Github</SubTitle>
         <Button as={"a"} href="https://github.com/Phizzard">
           View Profile
         </Button>
       </SocialCard>
-      <SocialCard image={{ fluid: data.devIconImage.childImageSharp.fluid }}>
+      <SocialCard
+        image={{ fluid: data.devIconImage.childImageSharp.fluid, top: true }}
+      >
         <SubTitle>Dev.to</SubTitle>
         <Button as={"a"} href="https://dev.to/phizzard">
           View Profile
         </Button>
       </SocialCard>
       <SocialCard
-        image={{ fluid: data.twitterIconImage.childImageSharp.fluid }}
+        image={{
+          fluid: data.twitterIconImage.childImageSharp.fluid,
+          top: true,
+        }}
       >
         <SubTitle>Twitter</SubTitle>
         <Button as={"a"} href="https://twitter.com/Phizzard">
