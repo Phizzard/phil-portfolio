@@ -12,15 +12,16 @@ const Card = ({ title, children, className, image, contentCenter }) => (
       </Header>
     )}
     <Body>
-      {image && (
-        <ImageWrapper imageTop={image.top}>
-          {image.fluid ? (
-            <StyledGatsbyImage fluid={image.fluid} />
-          ) : (
-            <Image src={image.src} />
-          )}
-        </ImageWrapper>
-      )}
+      {(image && image.src) ||
+        (image.fluid && (
+          <ImageWrapper imageTop={image.top}>
+            {image.fluid ? (
+              <StyledGatsbyImage fluid={image.fluid} />
+            ) : (
+              <Image src={image.src} />
+            )}
+          </ImageWrapper>
+        ))}
       <Content contentCenter={contentCenter}>{children}</Content>
     </Body>
   </Container>
@@ -70,8 +71,8 @@ const Content = styled.div`
 Card.defaultProps = {
   image: {
     top: false,
-    src: "",
-    fluid: {},
+    src: null,
+    fluid: null,
   },
 }
 
