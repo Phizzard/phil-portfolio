@@ -2,7 +2,9 @@ import React from "react"
 import styled from "@emotion/styled"
 import tw from "../../../tailwind"
 
-const CardTitle = ({ children }) => <Title>{children}</Title>
+const CardTitle = ({ children, className }) => (
+  <Title className={className}>{children}</Title>
+)
 
 export default CardTitle
 
