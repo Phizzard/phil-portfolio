@@ -11,13 +11,13 @@ const Intro = () => (
     </ImageWrapper>
     <TextWrapper>
       <Title>Phil Tietjen</Title>
-      <SubTitle>FullStack Web Developer</SubTitle>
+      <SubTitle>Still Web Developing</SubTitle>
       <HighLights>
         <HighLight>React</HighLight>
         <HighLight>Redux</HighLight>
         <HighLight>Gatsby</HighLight>
         <HighLight>Node</HighLight>
-        <HighLight>JS</HighLight>
+        <HighLight>TS</HighLight>
       </HighLights>
       <Navbar />
     </TextWrapper>

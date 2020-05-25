@@ -5,19 +5,59 @@ import tw from "../../tailwind"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { IntroText } from "../components/Intro"
-import { Card, CardText } from "../components/Card"
+import { Card, CardText, CardTitle } from "../components/Card"
 import { Button } from "../components/Button"
 
 const Projects = ({ data }) => (
   <Layout>
     <SEO title="Projects" />
-    <IntroText>
-      Sometimes I either finish or come close to finishing a side project. Here
-      are some I don't classify to be in my github graveyard.
-    </IntroText>
+    <IntroText>A closer look into some stuff I've done</IntroText>
+    <ProjectCard
+      image={{ fluid: data.cbcIconImage.childImageSharp.fluid }}
+      title="React UI Library - CBC Innovation Sprint 2019"
+    >
+      <CardText>
+        As a part of CBC's annual 2 week innovation sprint, I pitched for a
+        project to build an in house React UI Library that would aim for
+        friendly component API's, theming, and small bundle sizes. I took a
+        leadership role with a team of 5 to collaborate together and build the
+        foundation of the project.
+        <br />
+        <br />
+        <DetailTitle>Project Highlights</DetailTitle>
+        <ul>
+          <li>TypeScript - Strong typing with props</li>
+          <li>Style Guidist - Self documentation from Types and JSDocs</li>
+          <li>Emotion - Theming and styling</li>
+          <li>
+            Single Theme Config - Source of truth for pallete, sizes, spaces,
+            etc
+          </li>
+          <li>Small Bundle Size - appoximating at 8kb</li>
+        </ul>
+      </CardText>
+    </ProjectCard>
+    <ProjectCard
+      image={{ fluid: data.podcastIconImage.childImageSharp.fluid }}
+      title="Devplebs"
+    >
+      <CardText>
+        When my close friend of mine and I decided to wonder into the world of
+        podcasting, we wanted a website to help out with some web presence. So
+        we decided to build a small website for some of our content. We built
+        the website using GatsbyJS, TailwindCSS, and Emotion/styled. The site
+        also consumes data from our podcast hosting at PodBean using their API
+        and loads it into Gatsby's GraphQL data layer on build time.
+      </CardText>
+      <ButtonGroup>
+        <ProjectButton as="a" href="https://www.devplebs.tech/" target="_blank">
+          View Project
+        </ProjectButton>
+      </ButtonGroup>
+    </ProjectCard>
     <ProjectCard
       image={{ fluid: data.giantBombIconImage.childImageSharp.fluid }}
-      title="Regular Bomb Shows (WIP)"
+      title="Gatsby Bomb PWA"
     >
       <CardText>
         That's right, I have 2 different projects using Giantbomb's API. I'm a
@@ -127,6 +167,9 @@ const ProjectCard = styled(Card)`
     border-radius: 100%;
   }
 `
+const DetailTitle = styled(CardTitle)`
+  ${tw`text-left pb-4`}
+`
 const ButtonGroup = styled.div`
   ${tw`flex justify-center md:justify-start`}
 `
@@ -154,6 +197,20 @@ export const query = graphql`
       }
     }
     giantBombIconImage: file(relativePath: { eq: "giantbomb.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 360) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    cbcIconImage: file(relativePath: { eq: "cbc-logo.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 360) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    podcastIconImage: file(relativePath: { eq: "fridaynightdeploys.png" }) {
       childImageSharp {
         fluid(maxWidth: 360) {
           ...GatsbyImageSharpFluid

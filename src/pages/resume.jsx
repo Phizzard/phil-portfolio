@@ -20,9 +20,21 @@ const Resume = ({ data }) => (
       title="Jun 2019 - Present"
       image={{ fluid: data.cbcIconImage.childImageSharp.fluid, top: true }}
     >
-      <CardTitle>CBC</CardTitle>
+      <CardTitle>CBC Radio-Canada - Digital Products</CardTitle>
       <CardSubTitle>Senior Developer</CardSubTitle>
-      <CardText></CardText>
+      <CardText>
+        CBC Radio-Canada is the national broadcasting centre for Canada where I
+        worked as a Senior Developer on the Web Platform team in the Digital
+        Products department.
+        <br />
+        <br />
+        As a member of the Web Platform team, Our initiative is to ensure
+        scalability, maintainability, and performance on the web application
+        powering the cbc.ca website and enable several other teams to contribute
+        to the codebase smoothly. The CBC website is a single page application
+        built with React and Redux and utilizes Node.JS with Express to handle
+        server-side rendering.
+      </CardText>
     </WorkCard>
     <WorkCard
       title="Oct 2016 - Jun 2019"
@@ -36,18 +48,14 @@ const Resume = ({ data }) => (
         ranging from E-commerce, social platforms, and editorial systems. Mainly
         focused in the core brand LabX Marketplace, I started out maintaining
         the Labx Service Site. The Labx Service Site's stack involved Node,
-        Express, JQuery, Pug, GRUNT, LESS, and MSSQL. I worked on implementing
-        Google Maps API for locating service provider's locations from exact
-        longitude - latitude to distance radius's and adding a review system
-        from scratch using JQuery on the front end. My next main project was to
-        undergo a big project of rebuilding the LabX Marketplace utilizing
-        Magento 2 in a headless state and building a store front from scratch.
-        The storefront's stack involved Node, Express, React, Pug, GULP, SASS.
-        Though the project was not initially scoped to use Magento 2 in a
-        headless state, after many difficulties getting the project moving from
-        Magento's lacking frontend I was able to create a proof of concept
-        outside of work hours and present the alternate route to progress on the
-        project and provide a cleaner storefront experience.
+        Express, JQuery, Pug, GRUNT, LESS, and MSSQL. My next main project was
+        to undergo the previous legacy project utilizing Magento 2 in a headless
+        state and building a store front from scratch. The storefront's stack
+        involved Node, Express, React, Pug, GULP, SASS. Though the project was
+        not initially scoped to use Magento 2 in a headless state, after many
+        difficulties getting the project moving from Magento's lacking frontend
+        I was able to create a proof of concept and present the alternate route
+        to progress on the project and provide a cleaner storefront experience.
       </CardText>
     </WorkCard>
     <WorkCard
@@ -115,6 +123,14 @@ const Resume = ({ data }) => (
       <SkillCard
         image={{
           fluid: data.javascriptIconImage.childImageSharp.fluid,
+          top: true,
+        }}
+      >
+        <SubTitle>TypeScript</SubTitle>
+      </SkillCard>
+      <SkillCard
+        image={{
+          fluid: data.typescriptIconImage.childImageSharp.fluid,
           top: true,
         }}
       >
@@ -212,6 +228,13 @@ export const query = graphql`
       }
     }
     javascriptIconImage: file(relativePath: { eq: "javascript.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 360) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    typescriptIconImage: file(relativePath: { eq: "ts-logo.png" }) {
       childImageSharp {
         fluid(maxWidth: 360) {
           ...GatsbyImageSharpFluid
