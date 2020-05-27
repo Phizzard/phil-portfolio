@@ -6,7 +6,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Card, CardTitle, CardSubTitle, CardText } from "../components/Card"
 import { IntroText } from "../components/Intro"
-import georgianIcon from "../images/georgian.svg"
 
 const Resume = ({ data }) => (
   <Layout>
@@ -93,7 +92,7 @@ const Resume = ({ data }) => (
     <SubTitle>Education</SubTitle>
     <WorkCard
       title="Sept 2014 - Aug 2016"
-      image={{ src: georgianIcon, top: true }}
+      image={{ fluid: data.georgianIconImage.childImageSharp.fluid, top: true }}
     >
       <CardTitle>Computer Programmer - 2 years</CardTitle>
       <CardSubTitle>Diploma</CardSubTitle>
@@ -200,6 +199,13 @@ export const query = graphql`
       }
     }
     omsgIconImage: file(relativePath: { eq: "omsg.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 360) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    georgianIconImage: file(relativePath: { eq: "georgian-logo.png" }) {
       childImageSharp {
         fluid(maxWidth: 360) {
           ...GatsbyImageSharpFluid
