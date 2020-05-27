@@ -72,31 +72,22 @@ const Resume = ({ data }) => (
         Campaign and Zapier to create auto responding email services.
       </CardText>
     </WorkCard>
-    <WorkCard
-      title="May 2015 - Sept 2015"
-      image={{ fluid: data.omsgIconImage.childImageSharp.fluid, top: true }}
-      imageTop
-    >
-      <CardTitle>One More Story Games</CardTitle>
-      <CardSubTitle>Junior Client Developer</CardSubTitle>
-      <CardText>
-        Working as a junior client programmer in my first non paid work term, I
-        got the chance to work with some familiar technology and some
-        unfamiliar. Utilizing a MYSQL database using PHP to talk to a flash
-        built client running in an internet browser was all familiar despite the
-        use of action script that is used for flash. Using existing knowledge of
-        similar object orientated programming such as Java to learn quickly to
-        perform tasks.
-      </CardText>
-    </WorkCard>
-    <SubTitle>Education</SubTitle>
-    <WorkCard
-      title="Sept 2014 - Aug 2016"
-      image={{ fluid: data.georgianIconImage.childImageSharp.fluid, top: true }}
-    >
-      <CardTitle>Computer Programmer - 2 years</CardTitle>
-      <CardSubTitle>Diploma</CardSubTitle>
-    </WorkCard>
+    <SubTitle>Contributed To</SubTitle>
+    <SkillCards>
+      <SkillCard
+        image={{ fluid: data.gatsbyIconImage.childImageSharp.fluid, top: true }}
+      >
+        <SubTitle>Gatsby</SubTitle>
+      </SkillCard>
+      <SkillCard
+        image={{
+          fluid: data.mattermostIconImage.childImageSharp.fluid,
+          top: true,
+        }}
+      >
+        <SubTitle>MatterMost</SubTitle>
+      </SkillCard>
+    </SkillCards>
     <SubTitle>Skills</SubTitle>
     <SkillCards>
       <SkillCard
@@ -151,6 +142,14 @@ const Resume = ({ data }) => (
         <SubTitle>HTML</SubTitle>
       </SkillCard>
     </SkillCards>
+    <SubTitle>Education</SubTitle>
+    <WorkCard
+      title="Sept 2014 - Aug 2016"
+      image={{ fluid: data.georgianIconImage.childImageSharp.fluid, top: true }}
+    >
+      <CardTitle>Computer Programmer - 2 years</CardTitle>
+      <CardSubTitle>Diploma</CardSubTitle>
+    </WorkCard>
   </Layout>
 )
 const WorkCard = styled(Card)`
@@ -168,15 +167,15 @@ const SkillCards = styled.div`
 `
 
 const SkillCard = styled(Card)`
-  ${tw` font-sans mb-6 flex-grow`}
+  ${tw` font-sans m-2 flex-grow`}
   flex-basis: 48%;
   @media screen and (min-width: 576px) {
-    flex-basis: 33%;
+    flex-basis: 30%;
   }
 `
 
 export const query = graphql`
-  query CbcIconQuery {
+  query ResumeQuery {
     cbcIconImage: file(relativePath: { eq: "cbc-logo.png" }) {
       childImageSharp {
         fluid(maxWidth: 360) {
@@ -199,6 +198,13 @@ export const query = graphql`
       }
     }
     omsgIconImage: file(relativePath: { eq: "omsg.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 360) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    mattermostIconImage: file(relativePath: { eq: "mattermost-logo.png" }) {
       childImageSharp {
         fluid(maxWidth: 360) {
           ...GatsbyImageSharpFluid
