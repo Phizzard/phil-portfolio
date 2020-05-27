@@ -56,6 +56,27 @@ const Projects = ({ data }) => (
       </ButtonGroup>
     </ProjectCard>
     <ProjectCard
+      image={{ fluid: data.devIconImage.childImageSharp.fluid }}
+      title="Let's Take a Look At CSS in JS with React - 2019 Series"
+    >
+      <CardText>
+        A three part series of blog posts published to dev of me going through
+        various methods of CSS in JS in React, along with my personal takes on
+        them. I went through with inline styling, ReactJSS, and Styled
+        Components. I had a great time writing these posts and the engagements
+        that came with it!
+      </CardText>
+      <ButtonGroup>
+        <ProjectButton
+          as="a"
+          href="https://dev.to/phizzard/let-s-take-a-look-at-css-in-js-with-react-in-2019-css-inline-styling-jcg"
+          target="_blank"
+        >
+          View Posts
+        </ProjectButton>
+      </ButtonGroup>
+    </ProjectCard>
+    <ProjectCard
       image={{ fluid: data.giantBombIconImage.childImageSharp.fluid }}
       title="Gatsby Bomb PWA"
     >
@@ -197,6 +218,13 @@ export const query = graphql`
       }
     }
     giantBombIconImage: file(relativePath: { eq: "giantbomb.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 360) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    devIconImage: file(relativePath: { eq: "dev.png" }) {
       childImageSharp {
         fluid(maxWidth: 360) {
           ...GatsbyImageSharpFluid
