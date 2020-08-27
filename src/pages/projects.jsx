@@ -13,15 +13,13 @@ const Projects = ({ data }) => (
     <SEO title="Projects" />
     <IntroText>A closer look into some stuff I've done</IntroText>
     <ProjectCard
-      image={{ fluid: data.cbcIconImage.childImageSharp.fluid }}
-      title="React UI Library - CBC Innovation Sprint 2019"
+      image={{ fluid: data.porungaImage.childImageSharp.fluid }}
+      title="Porunga - Another React UI Library"
     >
       <CardText>
-        As a part of CBC's annual 2 week innovation sprint, I pitched for a
-        project to build an in house React UI Library that would aim for
-        friendly component API's, theming, and small bundle sizes. I took a
-        leadership role with a team of 5 to collaborate together and build the
-        foundation of the project.
+        A React UI library that hopes to deliver an easy to use component API
+        that can be easily extendable to fit the functional and design needs for
+        multiple platforms and audiences.
         <br />
         <br />
         <DetailTitle>Project Highlights</DetailTitle>
@@ -33,9 +31,25 @@ const Projects = ({ data }) => (
             Single Theme Config - Source of truth for pallete, sizes, spaces,
             etc
           </li>
-          <li>Small Bundle Size - appoximating at 8kb</li>
+          <li>Small Bundle Size - appoximating so far at 8kb</li>
         </ul>
       </CardText>
+      <ButtonGroup>
+        <ProjectButton
+          as="a"
+          href="https://github.com/Phizzard/Porunga"
+          target="_blank"
+        >
+          View Code
+        </ProjectButton>
+        <ProjectButton
+          as="a"
+          href="https://porunga.netlify.app/"
+          target="_blank"
+        >
+          View Project
+        </ProjectButton>
+      </ButtonGroup>
     </ProjectCard>
     <ProjectCard
       image={{ fluid: data.podcastIconImage.childImageSharp.fluid }}
@@ -231,7 +245,7 @@ export const query = graphql`
         }
       }
     }
-    cbcIconImage: file(relativePath: { eq: "cbc-logo.png" }) {
+    porungaImage: file(relativePath: { eq: "porunga-close.png" }) {
       childImageSharp {
         fluid(maxWidth: 360) {
           ...GatsbyImageSharpFluid
